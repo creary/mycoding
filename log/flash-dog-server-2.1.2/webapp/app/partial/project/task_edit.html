@@ -1,0 +1,68 @@
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $("#add_form").validate();
+
+
+    });
+</script>
+
+<div id="content" ng-controller="TaskEditControl">
+    <div js-console>
+    <div ng-include="'app/partial/project/_project_nav.html'" ></div>
+
+
+    <form id="add_form" ng-submit="updateTask()" >
+        <div class="tool-bar" style="text-align: left">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="setting-name">名      称</td>
+                    <td class="setting-main"><input name="name" id="task_name"   class="{required:true,name:true,minlength:2}" ng-model="task.name"/></td>
+                </tr>
+                <tr  >
+                    <td class="setting-name">执行周期</td>
+                    <td class="setting-main"><input name="cron" id="cron_text" class="{required:true,cron:true,minlength:6}"  ng-model="task.cron" value=""/>秒 分 时 天 月 年</td>
+                </tr>
+                <tr  >
+                    <td class="setting-name">超时(秒)</td>
+                    <td class="setting-main"><input name="timeout" id="time_out"  ng-model="task.timeout"/></td>
+                </tr>
+                <tr>  <td>
+                    脚本模板
+                </td> <td>  <a  class="btn btn-sm btn-default template_btn" data-target="log_stats">日志监控</a>
+                    <a  class="btn btn-sm  btn-default template_btn" data-target="money_stats" >指标监控</a>
+                    <a  class="btn  btn-sm btn-default template_btn" data-target="key_words" >关键字监控</a>
+                    <a  class="btn  btn-sm btn-default template_btn" data-target="jvm_stats">性能监控</a></td>
+                </tr>
+            </table>
+
+
+    </div>
+
+    <div style="border-top: 1px solid black; border-bottom: 1px solid black;">
+        <textarea class="script-text"   name="script"   ></textarea>
+    </div>
+    <br/>
+    <div style="float:left;">
+        <input class="btn  btn-sm btn-primary" type="submit" value="确定"/>
+        <input  class="btn  btn-sm btn-default " type="button" id="run_btn" ng-click="runScript()" value="测试"/>
+        <input class="btn  btn-sm btn-default " type="button" id="clear_btn" ng-click="clearConsole()"  value="清空"/>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    </form>
+
+
+    <div style="border-top: 1px solid black; border-bottom: 1px solid black;">
+        <textarea class="script-console" ></textarea>
+    </div>
+    <!--script template-->
+    <div style="display: none">
+
+    </div>
+</div>
+</div>

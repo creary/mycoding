@@ -1,0 +1,194 @@
+在工作中，会使用到任务调度这一方面的技术，开源框架Quartz使用的也比较多。
+Quartz官网：http://quartz-scheduler.org/
+
+官方提供了示例代码，在这里记录一下对示例代码的学习。
+
+下面是example1的学习。
+1. Quartz简介
+        现代的 Web 应用程序框架在范围和复杂性方面都有所发展，应用程序的每个底层组件也必须相应地发展。作业调度是现代系统中对 Java 应用程序的一般要求，而且也是
+对 Java 开发人员一贯的要求。虽然目前的调度技术比起原始的数据库触发器标志和独立的调度器线程来说，已经发展了许多，但是作业调度仍然不是个小问题。对这个问题最
+合适的解决方案就是来自 OpenSymphony 的 Quartz API。
+
+        Quartz 是个开源的作业调度框架，为在 Java 应用程序中进行作业调度提供了简单却强大的机制。Quartz 允许开发人员根据时间间隔（或天）来调度作业。它实现了作业和
+触发器的多对多关系，还能把多个作业与不同的触发器关联。整合了 Quartz 的应用程序可以重用来自不同事件的作业，还可以为一个事件组合多个作业。虽然可以通过属性文
+件（在属性文件中可以指定 JDBC 事务的数据源、全局作业和/或触发器侦听器、插件、线程池，以及更多）配置 Quartz，但它根本没有与应用程序服务器的上下文或引用集成
+在一起。
+结果就是作业不能访问 Web 服务器的内部函数；例如，在使用 WebSphere 应用服务器时，由 Quartz 调度的作业并不能影响服务器的动态缓存和数据源。
+2. HelloWorld
+作业和触发器
+        Quartz 调度包的两个基本单元是作业和触发器。作业 是能够调度的可执行任务，触发器 提供了对作业的调度。虽然这两个实体很容易合在一起，但在 Quartz 中将它们分离
+开来是有原因的，而且也很有益处。
+
+        通过把要执行的工作与它的调度分开，Quartz 允许在不丢失作业本身或作业的上下文的情况下，修改调度触发器。而且，任何单个的作业都可以有多个触发器与其关联。
+2.1 pom.xml
+[java] view plaincopy
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">  
+    <modelVersion>4.0.0</modelVersion>  
+    <groupId>org.ygy</groupId>  
+    <artifactId>quartz</artifactId>  
+    <packaging>war</packaging>  
+    <version>0.0.1-SNAPSHOT</version>  
+    <name>quartz Maven Webapp</name>  
+    <url>http://maven.apache.org</url>  
+  
+  
+    <dependencies>  
+        <dependency>  
+            <groupId>junit</groupId>  
+            <artifactId>junit</artifactId>  
+            <version>3.8.1</version>  
+            <scope>test</scope>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.quartz-scheduler</groupId>  
+            <artifactId>quartz</artifactId>  
+            <version>2.2.1</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.quartz-scheduler</groupId>  
+            <artifactId>quartz-jobs</artifactId>  
+            <version>2.2.1</version>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.slf4j</groupId>  
+            <artifactId>slf4j-log4j12</artifactId>  
+            <version>1.6.6</version>  
+        </dependency>  
+    </dependencies>  
+  
+  
+    <build>  
+        <finalName>quartz</finalName>  
+    </build>  
+</project>  
+2.2 Job
+Quartz中的任务，需要实现Job接口
+[java] view plaincopy
+package org.ygy.quartz.lesson01;  
+  
+import org.quartz.Job;  
+import org.quartz.JobExecutionContext;  
+import org.quartz.JobExecutionException;  
+import org.ygy.quartz.util.DateUtil;  
+  
+/** 
+ *  
+ * @author yuguiyang 
+ * @description 任务需要实现Job接口 
+ * @time 2013-10-26 
+ * @version V1.0 
+ */  
+public class HelloJob implements Job{  
+  
+    @Override  
+    public void execute(JobExecutionContext context) throws JobExecutionException {  
+        //这里简单输出一句话，和当前的系统时间  
+        System.out.println("Hello World. " + DateUtil.getCurrentDate());  
+    }  
+  
+}  
+2.3 调度任务
+[java] view plaincopy
+package org.ygy.quartz.lesson01;  
+  
+import java.util.Date;  
+  
+import org.quartz.JobBuilder;  
+import org.quartz.JobDetail;  
+import org.quartz.Scheduler;  
+import org.quartz.SchedulerFactory;  
+import org.quartz.Trigger;  
+import org.quartz.TriggerBuilder;  
+import org.quartz.impl.StdSchedulerFactory;  
+import org.ygy.quartz.util.DateUtil;  
+  
+public class SimpleExample {  
+  
+    public void run() throws Exception {  
+  
+        // 调度工厂  
+        SchedulerFactory sf = new StdSchedulerFactory();  
+          
+        // 从工厂中，获取一个任务调度实体  
+        Scheduler sched = sf.getScheduler();  
+  
+        // 定义任务运行时间，这里的话，你需要改成你想要任务在什么时候执行  
+        Date runTime = DateUtil.buildDate(14, 17, 55);  
+        System.out.println("任务将在：" + DateUtil.fromDate2String(runTime) + "执行");  
+  
+        // 初始化任务实体  
+        JobDetail job = JobBuilder  
+                            .newJob(HelloJob.class)  
+                            .withIdentity("job1", "group1")  
+                            .build();  
+  
+        // 初始化触发器  
+        Trigger trigger = TriggerBuilder  
+                            .newTrigger()  
+                            .withIdentity("trigger1", "group1")  
+                            .startAt(runTime)  
+                            .build();  
+  
+        // 设置定时任务  
+        sched.scheduleJob(job, trigger);  
+  
+        // 启动定时任务  
+        sched.start();  
+  
+        try {  
+            Thread.sleep(300000L);  
+        } catch (Exception e) {  
+        }  
+  
+        // 停止  
+        sched.shutdown(true);  
+    }  
+  
+    public static void main(String[] args) throws Exception {  
+        SimpleExample example = new SimpleExample();  
+        example.run();  
+    }  
+}  
+2.4 工具类
+[java] view plaincopy
+package org.ygy.quartz.util;  
+  
+import java.text.SimpleDateFormat;  
+import java.util.Calendar;  
+import java.util.Date;  
+  
+public class DateUtil {  
+      
+    public static final String COMMON = "yyyy-MM-dd HH:mm:ss";  
+      
+    public static String getCurrentDate() {  
+        SimpleDateFormat sdf = new SimpleDateFormat(COMMON);  
+          
+        return sdf.format(new Date());  
+    }  
+      
+    public static String fromDate2String(Date date) {  
+        SimpleDateFormat sdf = new SimpleDateFormat(COMMON);  
+          
+        return sdf.format(date);  
+    }  
+      
+    public static Date buildDate(int hour , int minute , int second) {  
+        Calendar c = Calendar.getInstance();  
+        c.set(2013,9, 26);  
+        c.set(Calendar.HOUR_OF_DAY, hour);  
+        c.set(Calendar.MINUTE, minute);  
+        c.set(Calendar.SECOND, second);  
+          
+        return c.getTime();   
+    }  
+      
+    public static void main(String[] args) {  
+        System.out.println(DateUtil.fromDate2String(DateUtil.buildDate(14, 7,11)));  
+    }  
+}  
+
+这里主要实现了，让指定的任务在指定时间执行。
