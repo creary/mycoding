@@ -1,0 +1,76 @@
+package com.yf.util.hutool;
+
+
+import java.util.LinkedHashSet;import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+
+import com.yf.util.hutool.exceptions.NotInitedException;
+public class SyncFinisher{
+	private CountDownLatch countDownLatch;
+	
+	private Set<Worker> workers = new LinkedHashSet<Worker>();
+	
+	/**
+	 * 增加工作线程
+	 * @param worker 工作线程
+	 */
+	synchronized public void addWorker(Worker worker) {
+		workers.add(worker);
+	}
+	
+	/**
+	 * 开始工作
+	 */
+	public void start() {
+		countDownLatch = new CountDownLatch(workers.size());
+		for (Worker worker : workers) {
+			worker.start();
+		}
+	}
+	
+	/**
+	 * 等待所有Worker工作结束，否则阻塞
+	 * @throws InterruptedException
+	 */
+	public void await() throws InterruptedException {
+		if(countDownLatch == null) {
+			throw new NotInitedException("Please call start() method first!");
+		}
+		
+		countDownLatch.await();
+	}
+	
+	/**
+	 * 清空工作线程对象
+	 */
+	public void clearWorker() {
+		workers.clear();
+	}
+	
+	/**
+	 * @return 并发数
+	 */
+	public long count() {
+		return countDownLatch.getCount();
+	}
+	
+	/**
+	 * 工作者，为一个线程
+	 * @author xiaoleilu
+	 *
+	 */
+	public abstract class Worker extends Thread {
+
+		@Override
+		public void run() {
+			try {
+				work();
+			} finally {
+				countDownLatch.countDown();
+			}
+		}
+		
+		public abstract void work();
+	}
+}
