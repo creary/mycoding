@@ -11,7 +11,6 @@ public class Lesson1 {
 	 */
 @Test
 public void effect1(){
-		Lesson1 le1=ObjectFactory.getInstance();
 
 	}
 }

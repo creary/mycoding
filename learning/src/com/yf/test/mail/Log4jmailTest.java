@@ -9,6 +9,5 @@ public class Log4jmailTest {
 		Logger log=Logger.getLogger(Log4jmailTest.class);
 		log.error("XXXXXXXXXXXXX ");
 	}
-
 }
 */
