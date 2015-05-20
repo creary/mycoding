@@ -1,0 +1,49 @@
+SLF4J(Simple Logging Facade for Java) 是一个通用的日志框架，不能何以谓之 Facade(门面)，所扮眼的角色相当于 Jakarta Commons Logging。就像 JCL 需要底层的日志实现，如 Log4J、java.util.logging、Simple Logger 等来完成具体的信息输出，事实上基本总是 JCL+Log4J 那么一个绝配。SLF4J 的原旨也是能支持多种下层日志框架实现，但最好的日志实现仍然是 Log4J，所以本篇讲述 SLF4J 的第一种用法 SLF4J+Log4J。 
+
+需要的配置文件和组件包，下面三个 jar 文件和一个 properties 文件都是要放在项目的 ClassPath 上。 
+
+slf4j-api-1.5.11.jar 
+
+slf4j-log4j12-1.5.11.jar 
+
+log4j-1.2.15.jar 
+
+log4j.properties(也可以是 log4j.xml，本例中用 log4j.propertes) 
+
+前两个包在 http://www.slf4j.org/download.html 处下载，后一个包在 http://logging.apache.org/log4j/1.2/download.html 下载，可能包文件名中的版本号有些差，不要紧。 
+
+log4j.properties 以前该是怎么写，现在还是怎么写，比如一个最简单的内容，只向控制台输出日志信息，如下： 
+
+1
+2
+3
+4
+log4j.rootLogger=DEBUG,console  
+log4j.appender.console=org.apache.log4j.ConsoleAppender   
+log4j.appender.console.layout=org.apache.log4j.PatternLayout   
+log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n
+使用 SLF4J  的代码：
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+package com.unmi; 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+public class TestSlf4j { 
+    private static final Logger logger = LoggerFactory.getLogger(TestSlf4j.class);
+    public static void main(String[] args) { 
+        logger.info("Hello {}","SLF4J"); 
+    } 
+}
+执行它，控制台输出：
+
+1
+2010-04-07 17:14:51,390 [com.unmi.TestSlf4j]-[INFO] Hello SLF4J
+把这种 SLF4J+Log4J 的使用模式与曾为霸主地位的 JCL+Log4J 的用法进行一下对比(请忽略掉包文件中的版本号)： 

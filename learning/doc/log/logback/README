@@ -1,0 +1,74 @@
+需要的配置文件和组件包，下面三个 jar 文件和一个 xml文件都是要放在项目的 ClassPath 上。 
+
+slf4j-api-1.5.11.jar
+
+logback-core-0.9.20.jar
+
+logback-classic-0.9.20.jar
+
+logback.xml 或 logback-test.xml (类似于 log4j.properties/log4j.xml) 
+
+前一个包在 http://www.slf4j.org/download.html 处下载，第二第三个包在 http://logback.qos.ch/download.html 下载，可能包文件名中的版本号有些差，不要紧。由于这里不演示 HTTP 访问日志信息，所以不需要用到 logback-access-0.9.20.jar。 
+
+Logback 先找 logback-test.xml，没有则找 logback.xml 文件，都找不到就使用 BasicConfigurator 基本配置，BasicConfigurator 就是相当于等会贴出的 logback.xml 文件内容的配置。这里我们用 logback.xml 配置文件，以前的 log4j.properties  文件可以用 PropertiesTranslator 转换成 logback.xml 文件内容。 
+
+下面是一个最简单的 logback.xml 文件内容 
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+<?xml version="1.0" encoding="UTF-8"?>  
+<configuration>  
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">  
+        <encoder charset="GBK">  
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>  
+        </encoder>  
+    </appender>  
+          
+    <root level="DEBUG">  
+        <appender-ref ref="stdout" />  
+    </root>  
+</configuration>
+在 log4j.xml 能做的配置，logback.xml 中也能做到，而且还增强了诸如 <if><then><else>、<filter>、<sift> 等更强的控制，请参考 logback 的手册 http://logback.qos.ch/manual/index.html。 
+
+使用 Logback  的代码 
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+package com.unmi; 
+  
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+  
+public class TestLogback { 
+private static final Logger logger = LoggerFactory.getLogger(TestLogback.class); 
+  
+    public static void main(String[] args) { 
+        logger.info("Hello {}","TestLogback"); 
+    } 
+}
+可以看到与使用 SLF4J 的代码没有任何区别，因为本来用的通用日志框架就是 SLF4J，说到底，这里的 Logback 就相当于 SLF4J+Log4J 使用方式中的 Log4J 绑定和 Log4J 的功能。 
+
+执行上面的代码，输出： 
+
+1
+21:38:43.031 [main] INFO  com.unmi.TestLogback - Hello TestLogback
