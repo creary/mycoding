@@ -1,4 +1,4 @@
-/*package com.yf.mail.log4jmail;
+package com.yf.test.mail.log4jmail;
 
 import org.apache.log4j.Layout;
 import org.apache.log4j.spi.LoggingEvent;
@@ -28,10 +28,9 @@ public class Log4jMailLayout extends Layout {
 	public boolean ignoresThrowable() {
 		return false;
 	}
-	*//**
+	/**
 	 * @author 李听
 	 * 
-	 *//*
+	 */
 
 }
-*/

@@ -9,13 +9,19 @@ import java.util.Date;
 
 import org.apache.commons.dbutils.handlers.ArrayListHandler;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.yf.util.DBUtilApache;
 import com.yf.util.net.IpUtil;
 
 public class Base {
 	
-	
+	public static void main(String[] args) {
+		
+	Logger log=	LoggerFactory.getLogger(Base.class);
+	log.error("ss");
+	}
 	
 @Test
 public void effectjava(){
