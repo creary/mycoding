@@ -1,4 +1,4 @@
-/build/
+/build/*
 #忽略class文件
 *.class
 #忽略maven编译的target文件夹
@@ -7,3 +7,4 @@ target/
 .classpath
 .project
 .settings/
+/build/

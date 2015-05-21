@@ -13,7 +13,7 @@ public class LogBackT {
 		
 		@Test
 		public void testLogback(){
-			log.error("中文啦啦啦啦啦");
+			log.error("测试发送邮件");
 		}
 		
 }

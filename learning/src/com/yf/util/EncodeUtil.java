@@ -17,7 +17,6 @@ import org.apache.commons.lang.StringEscapeUtils;
  *  
  */
 public class EncodeUtil {
-
 	private static final String DEFAULT_URL_ENCODING = "UTF-8";
 
 	/**
