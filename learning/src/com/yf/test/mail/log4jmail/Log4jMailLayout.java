@@ -32,6 +32,5 @@ public class Log4jMailLayout extends Layout {
 	 * @author 李听
 	 * 
 	 *//*
-
 }
 */

@@ -17,33 +17,26 @@ import com.yf.util.hutool.db.ds.DruidDS;
  */
 public class  DBTest{
 	
-	
-	
-	@Test
-	public void testArr(){
-		DataSource ds=DruidDS.getDataSource();
-		System.out.println(ds);
-		try {
-	Connection ce=	ds.getConnection();
-		System.out.println(ce);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		@Test
+		public void testArr(){
+			DataSource ds=DruidDS.getDataSource();
+			System.out.println(ds);
+			try {
+				Connection ce=	ds.getConnection();
+				System.out.println(ce);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-	}
-	
+
 	@Test
 	public void testapacheDB(){
 	try {
 		DataSource ds=	 DruidDS.getDataSource();
 		Connection conn=	ds.getConnection();
 		QueryRunner qr=new QueryRunner();
-	} catch (SQLException e) {
+		} catch (SQLException e) {
 		e.printStackTrace();
+		}
 	}
-	
-		
-	}
-	
-	
-	
 }

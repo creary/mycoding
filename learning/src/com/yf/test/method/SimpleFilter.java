@@ -22,6 +22,7 @@ public class SimpleFilter implements Filter {
 		}
 		chain.doFilter(request, response);
 	}
+	
 	public void init(FilterConfig fConfig) throws ServletException {
 		WritelogUtil.writeMsgToFile("SimpleFilter 的系统初始化参数是 :  "+ fConfig.getInitParameter("encode"));
 		this.charset=fConfig.getInitParameter("encode");

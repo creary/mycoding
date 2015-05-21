@@ -88,7 +88,6 @@ public class BaseTest {
 				;
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -111,12 +110,14 @@ public class BaseTest {
 	public long timeStamp_Calendar(){
 		return Calendar.getInstance().getTimeInMillis();
 	}
-/**
- * 获取时间戳
- * @return long 类型
- */
+	/**
+	 * 获取时间戳
+	 * @return long 类型
+	 */
 	public long timeStamp_Date(){
 		return new Date().getTime();
 	}
+	
+	
 	
 }
