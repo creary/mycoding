@@ -49,7 +49,10 @@
   	<welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
-
+ <listener> 
+ <description>tomcat启动关闭监听 </description> 
+        <listener-class>com.yf.code.listener.TomServletContextListener</listener-class>  
+    </listener>  
   
 
   

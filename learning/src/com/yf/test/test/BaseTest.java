@@ -37,6 +37,7 @@ public class BaseTest {
 	 * 
 	 * @since CodingExample　Ver(编码范例查看) 1.1
 	 */
+	
 	@Test
 	public void testExec() {
 		Runtime run = Runtime.getRuntime();
@@ -85,7 +86,6 @@ public class BaseTest {
 					"D:\\cache\\windows\\Desktop\\c.JPG");
 			for (byte c : s.getBytes()) {
 				System.out.println(c);
-				;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -117,7 +117,14 @@ public class BaseTest {
 	public long timeStamp_Date(){
 		return new Date().getTime();
 	}
-	
-	
+	/**
+	 * 获取Java现在正调用的方法名
+	 */
+	@Test
+	public void testGetCurrentMeth(){
+			String thString=Thread.currentThread().getStackTrace()[1].getMethodName();
+			System.out.println(thString);
+		}
 	
 }
+
