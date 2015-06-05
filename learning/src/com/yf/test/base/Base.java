@@ -66,14 +66,17 @@ public class Base {
 		System.out.println(" 我是 \r 换行");
 		System.out.println(" 我是 \f 换页");
 	}
+	
 	@Test
 	public void selectTest(){
 		System.out.println(DBUtilApache.queryArrayList(DBUtilApache.openConn("mysql", "localhost", "3306", "test", "root", "ifidc2403"), "select * from bpbaselogtbl",null).size());;
 	}
+	
 	@Test
 	public void updateTest(){
 		System.out.println(DBUtilApache.update(DBUtilApache.openConn("mysql", "localhost", "3306", "test", "root", "ifidc2403"), "INSERT into sys_icon(mark,type) value ('11','22');",null));;
 	}
+	
 	@Test
 	public void iptest(){
 		try {
