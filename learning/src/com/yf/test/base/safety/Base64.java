@@ -29,10 +29,5 @@ public class Base64 {
 		}
 		return content;
 	}
-	public static void main(String[] args) {
-
-		
-		
-	}
 
 }

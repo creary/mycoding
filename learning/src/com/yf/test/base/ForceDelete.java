@@ -18,6 +18,7 @@ public class ForceDelete {
 			e.printStackTrace();
 		}
     }
+    
     /**
      * 功 能: 删除文件夹 参 数: strDir 要删除的文件夹名称 返回值: 如果成功true;否则false
      * 

@@ -17,32 +17,30 @@ import com.yf.util.net.IpUtil;
 
 public class Base {
 	
-	public static void main(String[] args) {
-		
-	Logger log=	LoggerFactory.getLogger(Base.class);
-	log.error("ss");
-	}
 	
-@Test
-public void effectjava(){
-	String a="abc";
-	String b="abcde";
-	//问 a是否是b的字串
-	System.out.println(b.contains(a));;//如果返回true就表示b中含有a 也就是a是b的子串
-}
-
-/**
- * 累加算法：
- * 实现求sum
- * sum = 1+2+3+4......+n;
- */
-public static long cycle(long value){
-	long sum=0;
-	for(long i=1,v=value;i<v;i++){
-		sum+=i;
+	public static void main(String[] args) {
+		Logger log=	LoggerFactory.getLogger(Base.class);
+		log.error("ss");
 	}
-	return sum;
-}
+	@Test
+	public void effectjava(){
+		String a="abc";
+		String b="abcde";
+		//问 a是否是b的字串
+		System.out.println(b.contains(a));;//如果返回true就表示b中含有a 也就是a是b的子串
+	}
+	/**
+	 * 累加算法：
+	 * 实现求sum
+	 * sum = 1+2+3+4......+n;
+	 */
+	public static long cycle(long value){
+		long sum=0;
+		for(long i=1,v=value;i<v;i++){
+			sum+=i;
+		}
+		return sum;
+	}
 	/**
 	 * 高斯算法实现数字累加：
 	 * @param value  1到n  value就是n
@@ -72,7 +70,6 @@ public static long cycle(long value){
 	public void selectTest(){
 		System.out.println(DBUtilApache.queryArrayList(DBUtilApache.openConn("mysql", "localhost", "3306", "test", "root", "ifidc2403"), "select * from bpbaselogtbl",null).size());;
 	}
-	
 	@Test
 	public void updateTest(){
 		System.out.println(DBUtilApache.update(DBUtilApache.openConn("mysql", "localhost", "3306", "test", "root", "ifidc2403"), "INSERT into sys_icon(mark,type) value ('11','22');",null));;
@@ -88,6 +85,7 @@ public static long cycle(long value){
 			e.printStackTrace();
 		}
 	}
+	
 	@Test
 	public void testTime(){
 		SimpleDateFormat sd=new SimpleDateFormat("yyyy_MM_dd");
@@ -100,9 +98,13 @@ public static long cycle(long value){
 			e.printStackTrace();
 		}
 	}
+	
 	@Test
 	public void testImag(){
 		
 	}
+	
+	
+	
 }
 
