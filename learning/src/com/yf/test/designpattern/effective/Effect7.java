@@ -15,7 +15,6 @@ public class C {
         System.gc();  
     }  
 }  
-  
 class A {  
     B b;  
   

@@ -3,14 +3,6 @@ package com.yf.test.designpattern.effective;
 public class Effect2 {
 
 	/*
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	 一、背景
 对于有多个可选参数的类，我们一般通过什么办法传递参数呢？这里提供了三种办法：
 ①. 重叠构造器模式
