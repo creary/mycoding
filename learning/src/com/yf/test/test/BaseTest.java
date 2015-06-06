@@ -11,7 +11,6 @@ import java.util.Date;
 import org.junit.Test;
 
 import com.mysql.jdbc.BufferRow;
-import com.yf.util.ImageUtil;
 import com.yf.util.byteUtil;
 
 public class BaseTest {
@@ -72,7 +71,6 @@ public class BaseTest {
 				0x32, 0x00, 0x38, 0x00, 0x33, 0x00, 0x36, 0x00, 0x2E, 0x00,
 				0x6A, 0x00, 0x70, 0x00, 0x67, 0x00, (byte) 0xD8, 0x1D, 0x03,
 				0x00 };
-		ImageUtil.writerImageTOdisk(b, "d:\\a.jpg");
 	}
 
 	@Test
@@ -82,8 +80,6 @@ public class BaseTest {
 					"D:\\cache\\windows\\Desktop\\a.JPG"));
 			String s = new String(b, "UTF-8");
 			String s1 = new String(b, "ISO8859-1");
-			ImageUtil.writerImageTOdisk(s1.getBytes(),
-					"D:\\cache\\windows\\Desktop\\c.JPG");
 			for (byte c : s.getBytes()) {
 				System.out.println(c);
 			}
