@@ -13,11 +13,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.yf.util.DBUtilApache;
+import com.yf.util.LogUtil;
+import com.yf.util.hutool.Log;
 import com.yf.util.net.IpUtil;
 
 public class Base {
-	
-	
+	static Logger log=Log.get();
 	public static void main(String[] args) {
 		Logger log=	LoggerFactory.getLogger(Base.class);
 		log.error("ss");
@@ -104,8 +105,10 @@ public class Base {
 	
 	@Test
 	public void testImag(){
-		
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(sdf.format(new Date()));
 	}
+	
 	
 	
 	
