@@ -1,11 +1,14 @@
 package com.yf.test.base;
 
+import java.io.IOException;
 import java.net.SocketException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import javax.mail.MessagingException;
 
 import org.apache.commons.dbutils.handlers.ArrayListHandler;
 import org.junit.Test;
@@ -15,14 +18,12 @@ import org.slf4j.LoggerFactory;
 import com.yf.util.DBUtilApache;
 import com.yf.util.LogUtil;
 import com.yf.util.hutool.Log;
+import com.yf.util.mail.MailUtil;
 import com.yf.util.net.IpUtil;
 
 public class Base {
+	
 	static Logger log=Log.get();
-	public static void main(String[] args) {
-		Logger log=	LoggerFactory.getLogger(Base.class);
-		log.error("ss");
-	}
 	@Test
 	public void effectjava(){
 		String a="abc";
@@ -107,9 +108,35 @@ public class Base {
 	public void testImag(){
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(sdf.format(new Date()));
+		
 	}
-	
-	
+	@Test
+	public void testMail(){
+		try {
+			MailUtil.sendMail("1152695512@qq.com", "主题", "<html></html>");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 
+	* @Title: testMdruill 
+	* @Description: TODO(千万数据查询  迁移) 
+	* @param     设定文件 
+	* @return void    返回类型 
+	* @throws
+	 */
+	@Test
+	public void testMdruill(){
+		
+		
+		
+		
+	}
 	
 	
 }
