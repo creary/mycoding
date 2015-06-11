@@ -7,11 +7,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.mail.MessagingException;
 
 import org.apache.commons.dbutils.handlers.ArrayListHandler;
 import org.junit.Test;
+import org.quartz.SchedulerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +22,8 @@ import com.yf.util.LogUtil;
 import com.yf.util.hutool.Log;
 import com.yf.util.mail.MailUtil;
 import com.yf.util.net.IpUtil;
+import com.yf.util.quartz.job.QuartzUtils;
+import com.yf.util.quartz.jobean.ScheduleJob;
 
 public class Base {
 	
@@ -115,11 +119,18 @@ public class Base {
 		try {
 			MailUtil.sendMail("1152695512@qq.com", "主题", "<html></html>");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testQuartz() throws SchedulerException{
+		QuartzUtils qu=new QuartzUtils();
+		List<ScheduleJob> ls=qu.getAllJob();
+		for (ScheduleJob iterable_element : ls) {
+			System.out.println(iterable_element);
+			
 		}
 	}
 	/**
@@ -137,6 +148,7 @@ public class Base {
 		
 		
 	}
+	
 	
 	
 }
