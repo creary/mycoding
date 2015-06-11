@@ -36,7 +36,6 @@ public class BaseTest {
 	 * 
 	 * @since CodingExample　Ver(编码范例查看) 1.1
 	 */
-	
 	@Test
 	public void testExec() {
 		Runtime run = Runtime.getRuntime();
@@ -54,7 +53,6 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 	}
-
 	@Test
 	public void testStrToByte() {
 		// String
@@ -72,7 +70,6 @@ public class BaseTest {
 				0x6A, 0x00, 0x70, 0x00, 0x67, 0x00, (byte) 0xD8, 0x1D, 0x03,
 				0x00 };
 	}
-
 	@Test
 	public void byteFile() {
 		try {
@@ -87,6 +84,7 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 	}
+	
 	/**
 	 * 当期时间戳：
 	 * 时间戳：
@@ -122,7 +120,6 @@ public class BaseTest {
 			System.out.println(thString);
 		}
 	/**
-	 * 
 	* @Title: testRuntime 
 	* @Description: TODO(JVM内存) 
 	* @param     设定文件 
@@ -134,6 +131,9 @@ public class BaseTest {
 		System.out.println(Runtime.getRuntime().maxMemory());//虚拟机可以控制的最大内存
 		System.out.println(Runtime.getRuntime().totalMemory());//虚拟机当前使用内存
 	}
-	
+	@Test
+	public void test1(){
+		
+	}
 }
 
