@@ -62,14 +62,12 @@ public class ExcelTest {
 		        try {
 					create(fileName, content);
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (DocumentException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}  
 		 }
-		    private static void create(String fileName, String content) throws DocumentException, FileNotFoundException {  
+		  private static void create(String fileName, String content) throws DocumentException, FileNotFoundException {  
 		          
 		        //step1  
 		        Document document = new Document();  

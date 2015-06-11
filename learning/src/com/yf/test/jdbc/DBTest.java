@@ -31,12 +31,30 @@ public class  DBTest{
 
 	@Test
 	public void testapacheDB(){
-	try {
+		try {
 		DataSource ds=	 DruidDS.getDataSource();
 		Connection conn=	ds.getConnection();
+		System.out.println(conn);
 		QueryRunner qr=new QueryRunner();
 		} catch (SQLException e) {
-		e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
+	
+	
+	@Test
+	public void testBigData(){
+		DataSource ds=DruidDS.getDataSource();
+		Connection conn=null;	
+		try {
+				conn=ds.getConnection();
+			} catch (SQLException e) {
+				 e.printStackTrace();
+			}finally{
+				DruidDS.closeDs();
+			}
+	}
+	
+	
+	
 }

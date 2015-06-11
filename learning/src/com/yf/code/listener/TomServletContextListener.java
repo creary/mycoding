@@ -3,6 +3,7 @@ package com.yf.code.listener;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,14 +15,19 @@ public class TomServletContextListener implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent arg0) {
 		//生成环境下  ---  不频繁重启的情况下来监听 tomcat 
 		if(ResourcesUtil.getVbyKey("listenerTomcat").equals("true")){
+		
 		}
+		
 		log.error("tomcat被异常关闭"+arg0);
     }  
-	
-	
     @Override  
     public void contextInitialized(ServletContextEvent arg0) {  
         System.out.println("tomcate启动成功");
     }  
+    
+    @Test
+    public void gcTest(){
+    	System.out.println(Runtime.getRuntime().freeMemory());
+    }
     
 }

@@ -131,9 +131,5 @@ public class BaseTest {
 		System.out.println(Runtime.getRuntime().maxMemory());//虚拟机可以控制的最大内存
 		System.out.println(Runtime.getRuntime().totalMemory());//虚拟机当前使用内存
 	}
-	@Test
-	public void test1(){
-		
-	}
 }
 
