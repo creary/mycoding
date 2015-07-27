@@ -26,7 +26,7 @@ public class Runjob {
 		Scheduler sched = sf.getScheduler();
 
 		// 定义任务运行时间，这里的话，你需要改成你想要任务在什么时候执行
-		Date runTime = DateUtil.buildDate(14, 58, 01);
+		Date runTime = DateUtil.buildDate(10, 19, 01);
 		log.info("任务将在：" + DateUtil.fromDate2String(runTime) + "执行");
 		// 初始化任务实体
 		JobDetail job = JobBuilder
