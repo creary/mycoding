@@ -53,7 +53,4 @@ public class ResourcesUtil {
 		}
 		return 	p.getProperty(key);
 	}
-	
-	
-	
 }

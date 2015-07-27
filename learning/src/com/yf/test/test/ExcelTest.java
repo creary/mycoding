@@ -19,8 +19,6 @@ import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfWriter;
 
 public class ExcelTest {
-
-	
 	 public static void writeExcel(File f) throws Exception {
 		  jxl.write.WritableWorkbook wwb = Workbook.createWorkbook(f);
 		  jxl.write.WritableSheet ws = wwb.createSheet("TestSheet1", 0);
@@ -53,10 +51,8 @@ public class ExcelTest {
 		  writeExcel(f);
 //		  readExcel(f);
 		 }
-	
 		 @Test
 		 public void pdfTest(){
-			  
 		        String fileName = "D:\\helloWorld.pdf";  
 		        String content = "Hello World!";  
 		        try {

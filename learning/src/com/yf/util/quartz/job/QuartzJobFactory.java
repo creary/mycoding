@@ -63,7 +63,6 @@ public class QuartzJobFactory implements Job {
 			log.debug("异常");
 			e.printStackTrace();
 		}
-
 	}
 
 }

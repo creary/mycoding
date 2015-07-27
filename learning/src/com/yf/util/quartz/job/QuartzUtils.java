@@ -410,11 +410,11 @@ public class QuartzUtils {
 			SchedulerException, InterruptedException {
 		QuartzUtils collectMain = new QuartzUtils();
 		ScheduleJob job = new ScheduleJob();
-		job.setBeanClass("com.gloryscience.config.main.TestJob");
+		job.setBeanClass("com.yf.test.base.MyQuartzJob");
 		job.setCronExpression("0/20 * * * * ?");// Cron表达式
 		job.setJobStatus(ScheduleJob.STATUS_RUNNING);
 		job.setIsConcurrent(ScheduleJob.CONCURRENT_NOT);// 是否允许并行运行
-		job.setJobName("TestJob");// job名称
+		job.setJobName("test");// job名称
 		job.setJobGroup("test");
 		job.setMethodName("test");
 		job.setErrorStatus(ScheduleJob.ERROR_NO_STOP);// 任务出现错误后是否停止

@@ -24,7 +24,6 @@ public class ImageTest {
 		String imgurl="http://dl2.iteye.com/upload/attachment/0103/0351/ad5156ab-b922-3fd0-af21-12b7c01e717f.png";
 		String baseurl="D:\\test.png";
 		writerImageTOdisk(getImgForNet(imgurl), baseurl);
-		
 	}
 	
 	public void  writerImageTOdisk(byte[] img,String filename){

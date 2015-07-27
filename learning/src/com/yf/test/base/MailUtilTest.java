@@ -42,6 +42,7 @@ public class MailUtilTest {
 		}
 	}
 
+	
 	@Test
 	public void testMail() {
 		try {

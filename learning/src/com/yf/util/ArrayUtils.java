@@ -41,10 +41,8 @@ public class ArrayUtils {
 		}
 		return x;
 	}
-
 	/**
 	 * 将一个数组的第N到M项由小到大排列,将排列后的结果返回
-	 *
 	 * @param aa
 	 * @param N
 	 * @param M

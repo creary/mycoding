@@ -37,7 +37,15 @@
       <servlet-name>DruidStatView</servlet-name>
       <url-pattern>/druid/*</url-pattern>
   </servlet-mapping>
-
+<!---Web log-->
+<filter>
+      <filter-name>LoginFilter</filter-name>
+      <filter-class>com.yf.code.log.WebLogFilter</filter-class>
+  </filter>
+    <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
     <!--淘宝druid数据库连接池结束-->
  <!--数字开始页面 40×  50× -->
   <error-page>

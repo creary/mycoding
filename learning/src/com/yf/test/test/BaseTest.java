@@ -138,19 +138,6 @@ public class BaseTest {
 		System.out.println(Runtime.getRuntime().maxMemory());//虚拟机可以控制的最大内存
 		System.out.println(Runtime.getRuntime().totalMemory());//虚拟机当前使用内存
 	}
-	/**
-	 * 
-	* @Title: testQueue 
-	* @Description: TODO(java queue ： java 队列) 
-	* @param     设定文件 
-	* @return void    返回类型 
-	* @throws
-	 */
-	@Test
-	public void testQueue(){
-		
-		
-		
-	}
+	
 }
 

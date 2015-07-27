@@ -4,24 +4,24 @@ import java.io.IOException;
 import java.net.SocketException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.mail.MessagingException;
 
-import org.apache.commons.dbutils.handlers.ArrayListHandler;
 import org.junit.Test;
+import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.yf.util.DBUtilApache;
-import com.yf.util.LogUtil;
 import com.yf.util.hutool.Log;
 import com.yf.util.mail.MailUtil;
 import com.yf.util.net.IpUtil;
+import com.yf.util.quartz.QuartzManager;
 import com.yf.util.quartz.job.QuartzUtils;
 import com.yf.util.quartz.jobean.ScheduleJob;
 
@@ -35,6 +35,7 @@ public class Base {
 		//问 a是否是b的字串
 		System.out.println(b.contains(a));;//如果返回true就表示b中含有a 也就是a是b的子串
 	}
+	
 	/**
 	 * 累加算法：
 	 * 实现求sum
@@ -112,7 +113,6 @@ public class Base {
 	public void testImag(){
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(sdf.format(new Date()));
-		
 	}
 	@Test
 	public void testMail(){
@@ -124,32 +124,28 @@ public class Base {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	@Test
 	public void testQuartz() throws SchedulerException{
 		QuartzUtils qu=new QuartzUtils();
 		List<ScheduleJob> ls=qu.getAllJob();
 		for (ScheduleJob iterable_element : ls) {
 			System.out.println(iterable_element);
-			
 		}
 	}
-	/**
-	 * 
-	* @Title: testMdruill 
-	* @Description: TODO(千万数据查询  迁移) 
-	* @param     设定文件 
-	* @return void    返回类型 
-	* @throws
-	 */
+	
 	@Test
-	public void testMdruill(){
-		
-		
-		
+	public void testM(){
+	int m=0;
+	for (int i = 0; i < 100; i++) {
+		m=m++;
+	}
+	System.out.println(m);
+	}
+	@Test
+	public void testAbstract(){
 		
 	}
-	
-	
-	
 }
 
