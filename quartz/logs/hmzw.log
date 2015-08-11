@@ -1,0 +1,158 @@
+2015-06-17 10:18:26,608 main INFO org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-06-17 10:18:26,612 main INFO org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-06-17 10:18:26,627 main INFO org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-06-17 10:18:26,628 main INFO org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.7 created.
+2015-06-17 10:18:26,630 main INFO org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-06-17 10:18:26,631 main INFO org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.7) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-06-17 10:18:26,631 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-06-17 10:18:26,632 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.7
+2015-06-17 10:18:26,633 main INFO com.yf.main.Runjob - 任务将在：2015-06-17 14:58:01执行
+2015-06-17 10:18:26,639 main INFO org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-06-17 10:18:26,640 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:18:27,628 Timer-0 DEBUG org.quartz.utils.UpdateChecker - Checking for available updated version of Quartz...
+2015-06-17 10:18:54,748 main INFO org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-06-17 10:18:54,752 main INFO org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-06-17 10:18:54,774 main INFO org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-06-17 10:18:54,775 main INFO org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.7 created.
+2015-06-17 10:18:54,777 main INFO org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-06-17 10:18:54,778 main INFO org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.7) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-06-17 10:18:54,778 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-06-17 10:18:54,778 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.7
+2015-06-17 10:18:54,779 main INFO com.yf.main.Runjob - 任务将在：2015-06-17 10:19:01执行
+2015-06-17 10:18:54,792 main INFO org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-06-17 10:18:54,793 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-17 10:18:55,775 Timer-0 DEBUG org.quartz.utils.UpdateChecker - Checking for available updated version of Quartz...
+2015-06-17 10:19:01,782 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'group1.job1', class=com.yf.job.tab.CutTableDay
+2015-06-17 10:19:01,783 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:19:01,784 DefaultQuartzScheduler_Worker-1 DEBUG org.quartz.core.JobRunShell - Calling execute on job group1.job1
+2015-06-17 10:19:01,784 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - 执行调度任务
+2015-06-17 10:19:01,784 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - 分表日期：day :_2015_06_17
+2015-06-17 10:19:01,785 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - 表名：bpbaselogtbl   _2015_06_17
+2015-06-17 10:19:01,861 DefaultQuartzScheduler_Worker-1 INFO com.yf.db.CutTable - 数据库test  ： true : bpbaselogtbl   _2015_06_17
+2015-06-17 10:19:01,861 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - test数据库已经存在了bpbaselogtbl   _2015_06_17表
+2015-06-17 10:19:25,931 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:19:51,584 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:20:20,510 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:20:47,447 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:21:15,764 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 10:21:44,710 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 14:07:40,769 main INFO org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-06-17 14:07:40,773 main INFO org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-06-17 14:07:40,786 main INFO org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-06-17 14:07:40,787 main INFO org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.7 created.
+2015-06-17 14:07:40,789 main INFO org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-06-17 14:07:40,789 main INFO org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.7) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-06-17 14:07:40,789 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-06-17 14:07:40,789 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.7
+2015-06-17 14:07:40,791 main INFO com.yf.main.Runjob - 任务将在：2015-06-17 10:19:01执行
+2015-06-17 14:07:40,797 main INFO org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-06-17 14:07:40,798 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-17 14:07:40,800 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'group1.job1', class=com.yf.job.tab.CutTableDay
+2015-06-17 14:07:40,802 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-17 14:07:40,802 DefaultQuartzScheduler_Worker-1 DEBUG org.quartz.core.JobRunShell - Calling execute on job group1.job1
+2015-06-17 14:07:40,802 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - 执行调度任务
+2015-06-17 14:07:40,802 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - 分表日期：day :_2015_06_17
+2015-06-17 14:07:40,803 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - 表名：bpbaselogtbl   _2015_06_17
+2015-06-17 14:07:40,859 DefaultQuartzScheduler_Worker-1 INFO com.yf.db.CutTable - 数据库test  ： true : bpbaselogtbl   _2015_06_17
+2015-06-17 14:07:40,860 DefaultQuartzScheduler_Worker-1 INFO com.yf.job.tab.CutTableDay - test数据库已经存在了bpbaselogtbl   _2015_06_17表
+2015-06-17 14:07:41,787 Timer-0 DEBUG org.quartz.utils.UpdateChecker - Checking for available updated version of Quartz...
+2015-06-17 14:08:06,493 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-24 10:57:28,286 main INFO org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-06-24 10:57:28,720 main INFO org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-06-24 10:57:28,748 main INFO org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-06-24 10:57:28,750 main INFO org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.7 created.
+2015-06-24 10:57:28,752 main INFO org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-06-24 10:57:28,754 main INFO org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.7) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-06-24 10:57:28,754 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-06-24 10:57:28,754 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.7
+2015-06-24 10:57:28,754 main INFO org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-06-24 10:57:28,754 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-24 10:57:28,756 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:57:28,760 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 10:57:28,762 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:57:28,762 DefaultQuartzScheduler_Worker-1 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 10:57:28,762 DefaultQuartzScheduler_Worker-1 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 10:57:29,750 Timer-0 DEBUG org.quartz.utils.UpdateChecker - Checking for available updated version of Quartz...
+2015-06-24 10:57:55,945 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 10:57:55,946 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:57:55,946 DefaultQuartzScheduler_Worker-2 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 10:57:55,946 DefaultQuartzScheduler_Worker-2 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 10:58:25,946 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 10:58:25,947 DefaultQuartzScheduler_Worker-3 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 10:58:25,947 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:58:25,948 DefaultQuartzScheduler_Worker-3 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 10:58:55,946 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 10:58:55,947 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:58:55,947 DefaultQuartzScheduler_Worker-4 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 10:58:55,947 DefaultQuartzScheduler_Worker-4 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 10:59:25,945 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 10:59:25,946 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:59:25,946 DefaultQuartzScheduler_Worker-5 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 10:59:25,946 DefaultQuartzScheduler_Worker-5 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 10:59:55,946 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 10:59:55,947 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 10:59:55,947 DefaultQuartzScheduler_Worker-6 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 10:59:55,947 DefaultQuartzScheduler_Worker-6 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 11:00:26,244 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 11:00:26,245 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 11:00:26,245 DefaultQuartzScheduler_Worker-7 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 11:00:26,245 DefaultQuartzScheduler_Worker-7 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 11:00:55,945 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 11:00:55,945 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 11:00:55,946 DefaultQuartzScheduler_Worker-8 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 11:00:55,946 DefaultQuartzScheduler_Worker-8 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 11:01:25,946 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 11:01:25,947 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 11:01:25,947 DefaultQuartzScheduler_Worker-9 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 11:01:25,947 DefaultQuartzScheduler_Worker-9 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 14:37:10,489 main INFO org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2015-06-24 14:37:10,493 main INFO org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2015-06-24 14:37:10,509 main INFO org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-06-24 14:37:10,511 main INFO org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.7 created.
+2015-06-24 14:37:10,512 main INFO org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2015-06-24 14:37:10,513 main INFO org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.7) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-06-24 14:37:10,513 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2015-06-24 14:37:10,513 main INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.7
+2015-06-24 14:37:10,513 main INFO org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2015-06-24 14:37:10,513 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+2015-06-24 14:37:10,515 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 14:37:10,517 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'DEFAULT.testJob', class=com.yf.test.TestJob
+2015-06-24 14:37:10,519 DefaultQuartzScheduler_QuartzSchedulerThread DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+2015-06-24 14:37:10,520 DefaultQuartzScheduler_Worker-1 DEBUG org.quartz.core.JobRunShell - Calling execute on job DEFAULT.testJob
+2015-06-24 14:37:10,520 DefaultQuartzScheduler_Worker-1 DEBUG com.yf.test.TestJob - TestJob run successfully...
+2015-06-24 14:37:11,511 Timer-0 DEBUG org.quartz.utils.UpdateChecker - Checking for available updated version of Quartz...
