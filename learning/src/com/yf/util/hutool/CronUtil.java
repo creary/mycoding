@@ -29,7 +29,6 @@ public class CronUtil {
 	public static void schedule(String schedulingPattern, Runnable task) {
 		scheduler.schedule(schedulingPattern, task);
 	}
-	
 	/**
 	 * 开始
 	 */
@@ -47,7 +46,6 @@ public class CronUtil {
 				Log.error(log, e, "Schedule [%s %s] add error!", pattern, jobClass);
 			}
 		}
-		
 		scheduler.start();
 	}
 	

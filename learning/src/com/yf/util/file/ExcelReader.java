@@ -63,16 +63,13 @@ public class ExcelReader {
 					System.out.print("	");
 				}
 			}
-
 		} catch (FileNotFoundException e) {
 			System.out.println("未找到指定路径的文件!");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 	/**
 	 * 读取xls文件
 	 * 
@@ -85,7 +82,6 @@ public class ExcelReader {
 			// 读取xlsx文件
 			if (".xlsx".equals(StringUtils.trim(extension))) {
 				return readXlsx(is, errorUserlst);
-
 			} else {
 				return readXls(is, errorUserlst);
 			}
@@ -95,7 +91,6 @@ public class ExcelReader {
 			retLst.add(new ArrayList<String>());
 			return retLst;
 		}
-
 	}
 
 	/**
@@ -142,7 +137,6 @@ public class ExcelReader {
 		}
 		return retLst;
 	}
-
 	@SuppressWarnings("static-access")
 	private String getValue(HSSFCell hssfCell) {
 		if (hssfCell.getCellType() == hssfCell.CELL_TYPE_BOOLEAN) {
@@ -153,7 +147,6 @@ public class ExcelReader {
 			return String.valueOf(hssfCell.getStringCellValue());
 		}
 	}
-
 	/**
 	 * 读取xlsx文件
 	 * 

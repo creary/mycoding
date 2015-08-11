@@ -1,7 +1,4 @@
 package com.yf.util.hutool;
-
-
-
 /**
  * 分页工具类
  * 
@@ -9,7 +6,6 @@ package com.yf.util.hutool;
  * 
  */
 public class PageUtil {
-	
 	/**
 	 * 将页数和每页条目数转换为开始位置和结束位置<br>
 	 * 此方法用于不包括结束位置的分页方法<br>
@@ -25,15 +21,12 @@ public class PageUtil {
 		if(pageNo <1) {
 			pageNo = 1;
 		}
-		
 		if(countPerPage < 1) {
 			countPerPage = 0;
 			Log.warn("Count per page  [{}] is not valid!", countPerPage);
 		}
-		
 		int start = (pageNo -1) * countPerPage;
 		int end = start + countPerPage;
-		
 		return new int[]{start, end};
 	}
 	

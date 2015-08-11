@@ -265,7 +265,6 @@ public class FileUtil {
 		name = filePath.substring(lastIndexOfLine + 1, fileNameLength);
 		return name;
 	}
-
 	/**
 	 * 获取文件名称 不带后缀
 	 * 
@@ -305,7 +304,6 @@ public class FileUtil {
 		int s = filePath.lastIndexOf("/");
 		return filePath.substring(0, s);
 	}
-
 	public static void main(String[] args) {
 
 	}
